@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HW_1</title>
+  </head>
+  <body>
+    <div class="slot">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+        </div>
+    
+        <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="password" required />
+        </div>
+    
+        <input type="submit" value="Sign in" onclick="checkCredentials()" />
+        <div id="result"></div>
+    </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
