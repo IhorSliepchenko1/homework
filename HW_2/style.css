@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 200px;
+}
+
+input {
+  width: 50px;
+  text-align: center;
+}
