@@ -47,3 +47,45 @@ function returnMathFloor() {
 const rate = 36.7;
 const UAH = prompt('Курс USD/UAH 36,7');
 let currency = alert(`${(UAH * rate).toFixed(2)} ₴`)
+
+
+// 6
+const rgbString = prompt('Введіть rgb колір (r, g, b)');
+const rgbArray = rgbString.split(',');
+
+const r_1 = parseInt(rgbArray[0]);
+const g_2 = parseInt(rgbArray[1]);
+const b_3 = parseInt(rgbArray[2]);
+
+const hex = alert(`#${r_1.toString(16).padStart(2, '0')}${g_2.toString(16).padStart(2, '0')}${b_3.toString(16).padStart(2, '0')}`)
+
+// // 7
+
+
+const houseData = prompt('кiлькiсть поверхiв, кiлькiсть квартир на поверсi та номер квартири (через кому!)');
+const houseDataArray = houseData.split(',');
+
+const numberFloors = parseInt(houseDataArray[0]);
+const apartmentsFloor = parseInt(houseDataArray[1]);
+const apartmentNumber = parseInt(houseDataArray[2]);
+
+let apartmentsEntrance = numberFloors * apartmentsFloor;
+
+function roundUpIfDecimal(number) {
+    let integerPart = Math.floor(number);
+    let decimalPart = number - integerPart;
+
+    if (decimalPart > 0) {
+        integerPart += 1;
+    }
+    return integerPart;
+}
+
+// № ПІД'ЇЗДУ
+let entranceNumber = roundUpIfDecimal(apartmentNumber / apartmentsEntrance);
+
+// № КВАРТИРИ
+let floorNumber = roundUpIfDecimal(((apartmentsEntrance - ((entranceNumber * apartmentsEntrance) - apartmentNumber)) / apartmentsFloor));
+
+const flats = alert(`Пiд'їзд № ${entranceNumber}, № поверху ${floorNumber} `)
+
