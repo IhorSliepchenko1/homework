@@ -1,3 +1,4 @@
+// Calc
 let notification = alert('Введіть по черзі з/п кожного місяця кварталу (у $)')
 
 let first = prompt('з/п за 1й місяць');
@@ -15,6 +16,9 @@ let total = first + second + third + fourth;
 let data = alert(`Квартальні виплати: ${total} $ 
 Середня з/п: ${total / 4} $`)
 
+
+
+// Завдання на синій пояс
 
 const credentials = {
     login: 'admin',

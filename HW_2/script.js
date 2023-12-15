@@ -1,5 +1,5 @@
 
-// 1
+// assign: evaluation
 var a = 5;
 var b, c;
 
@@ -14,12 +14,12 @@ b = (c = b / 2);
 
 console.log(a, b, c)
 
-// 2
+// Number: age
 let dateOfBirth = prompt('Скільки вам років?');
 dateOfBirth = parseFloat(dateOfBirth)
 let yearOfBirth = alert(`Ваш рік народження ${new Date().getFullYear() - dateOfBirth}`)
 
-// 3
+// Number: temperature
 let celsius = prompt('Скільки теимпература в Цельсіях?');
 celsius = parseFloat(celsius)
 
@@ -27,7 +27,7 @@ let fahrenheit = alert(`Температура в Цельсіях ${celsius} �
 Температура у Фаренгейтах ${celsius * 1.8000 + 32.00} ℉`)
 
 
-// 4
+// Number: divide
 
 function returnMathFloor() {
     let num1 = parseFloat(document.getElementById("num1").value)
@@ -38,13 +38,13 @@ function returnMathFloor() {
 }
 
 
-// 5
+// Number: currency
 const rate = 36.7;
 const UAH = prompt('Курс USD/UAH 36,7');
 let currency = alert(`${(UAH * rate).toFixed(2)} ₴`)
 
 
-// 6
+// Number: RGB
 const rgbString = prompt('Введіть rgb колір (r, g, b)');
 const rgbArray = rgbString.split(',');  
 
@@ -54,8 +54,7 @@ const b_3 = parseInt(rgbArray[2]);
 
 const hex = alert(`Колір у форматі HEX #${r_1.toString(16).padStart(2, '0')}${g_2.toString(16).padStart(2, '0')}${b_3.toString(16).padStart(2, '0')}`)
 
-// 7
-
+// Number: flats
 
 const houseData = prompt('кiлькiсть поверхiв, кiлькiсть квартир на поверсi та номер квартири (через кому!)');
 const houseDataArray = houseData.split(',');
