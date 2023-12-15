@@ -46,7 +46,7 @@ let currency = alert(`${(UAH * rate).toFixed(2)} ₴`)
 
 // 6
 const rgbString = prompt('Введіть rgb колір (r, g, b)');
-const rgbArray = rgbString.split(',');
+const rgbArray = rgbString.split(',');  
 
 const r_1 = parseInt(rgbArray[0]);
 const g_2 = parseInt(rgbArray[1]);
