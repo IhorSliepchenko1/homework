@@ -38,9 +38,9 @@ console.log(result_3);
 
 // String: big tag
 let str_4 = "якийсь текст, в якому є один тег <br /> і всяке інше";
-let ind_Of_First_2 = str_3.indexOf("<");
+let ind_Of_First_2 = str_4.indexOf("<");
 
-let ind_Of_Last_2 = str_3.indexOf(">");
+let ind_Of_Last_2 = str_4.indexOf(">");
 let result_4 = str_4.slice(0, ind_Of_First_2) +
     str_4.slice(ind_Of_First_2, ind_Of_Last_2 + 1).toUpperCase()
     + str_4.slice(ind_Of_Last_2 + 1);
