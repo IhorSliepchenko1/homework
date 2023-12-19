@@ -11,6 +11,7 @@ Default (if)
 Login
 Currency
 Scissors
+чорний пояс
 `)
 
 if (tasksProm === "Number") {
@@ -109,13 +110,11 @@ else if (tasksProm === "Prompt") {
     }
 }
 
-
 else if (tasksProm === "Confirm (or)") {
     // Confirm: or this days
 
     confirm("Шопінг?") || alert("ти бяка");
 }
-
 
 else if (tasksProm === "Confirm (if)") {
 
@@ -126,7 +125,6 @@ else if (tasksProm === "Confirm (if)") {
         alert('ти бяка');
     }
 }
-
 
 else if (tasksProm === "Default (or)") {
 
@@ -175,7 +173,6 @@ else if (tasksProm === "Default (if)") {
 
 }
 
-
 else if (tasksProm === "Login") {
     // Login and password
     const credentials = {
@@ -201,7 +198,6 @@ else if (tasksProm === "Login") {
     }
 
 }
-
 
 else if (tasksProm === "Currency") {
     // Currency exchange
@@ -244,7 +240,6 @@ else if (tasksProm === "Currency") {
 
 
 }
-
 
 else if (tasksProm === "Scissors") {
 
@@ -290,6 +285,41 @@ else if (tasksProm === "Scissors") {
     }
 
 
+}
+
+else if (tasksProm === "чорний пояс") {
+    // Завдання на чорний пояс
+
+    {
+        const rockPaperScissorsUser = prompt('Зробіть вибір: камінь, ножиці, папір');
+        let userNum;
+
+        rockPaperScissorsUser === "камінь" && (userNum = 0)
+            || rockPaperScissorsUser === "ножиці" && (userNum = 1)
+            || rockPaperScissorsUser === "папір" && (userNum = 2);
+
+        const compNum = Math.floor(Math.random() * 3);
+        let rockPaperScissorsComp;
+
+        compNum === 0 && (rockPaperScissorsComp = "камінь")
+            || compNum === 1 && (rockPaperScissorsComp = "ножиці")
+            || compNum === 2 && (rockPaperScissorsComp = "папір");
+
+        let win = ((userNum === 0 && compNum === 1) || (userNum === 1 && compNum === 2) || (userNum === 2 && compNum === 0));
+        let result;
+
+        win && (result = `Ви обрали ${rockPaperScissorsUser} / Комп обрав ${rockPaperScissorsComp}. ВИ ПЕРЕМОГЛИ!`);
+        !win && (result = `Ви обрали ${rockPaperScissorsUser} / Комп обрав ${rockPaperScissorsComp}. КОМП ВИГРАВ!`);
+
+        (userNum === compNum) && (result = `Ви обрали ${rockPaperScissorsUser} / Комп обрав ${rockPaperScissorsComp}. НІЧИЯ!`);
+
+        alert(result);
+
+    }
+}
+
+else {
+    alert('Всього найкращого!')
 }
 
 
