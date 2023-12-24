@@ -143,14 +143,14 @@
 
 // {
 //     // Flat
-//     const arrMultiply = [
-//         [0, 0, 0, 0, 0, 0],
-//         [0, 1, 2, 3, 4, 5],
-//         [0, 2, 4, 6, 8, 10],
-//         [0, 3, 6, 9, 12, 15],
-//         [0, 4, 8, 12, 16, 20],
-//         [0, 5, 10, 15, 20, 25],
-//     ];
+const arrMultiply = [
+    [0, 0, 0, 0, 0, 0],
+    [0, 1, 2, 3, 4, 5],
+    [0, 2, 4, 6, 8, 10],
+    [0, 3, 6, 9, 12, 15],
+    [0, 4, 8, 12, 16, 20],
+    [0, 5, 10, 15, 20, 25],
+];
 
 //     let arrFlat = [];
 //     for (let n = 1; n < arrMultiply.length; n++) {
@@ -161,19 +161,191 @@
 
 // }
 
-{
-    {
-        // Destruct
-        const descWordPrompt = prompt('Введіть слово');
-        const [, , secondLetter = '!', , fourthLetter = '!', fifthLetter = '!'] = descWordPrompt;
+// {
+//     // Destruct
+//     const descWordPrompt = [prompt('введіть слово')];
 
-        console.log(`
-        Друга літера: ${secondLetter},
-        Четверта літера: ${fourthLetter},
-        П'ята літера: ${fifthLetter}
-        `);
-    }
+//     const [firstLetter, , , , fifthLetter, , , , ninthLetter] = descWordPrompt;
+
+//     console.log(`
+//     Перша літера: ${firstLetter},
+//     П'ята літера: ${fifthLetter},
+//     Дев'ята літера: ${ninthLetter}
+//     `);
+
+// }
 
 
-}
+// {
+//     {
+//         // Destruct default
+//         const descWordPrompt = prompt('Введіть слово');
+//         const [, , secondLetter = '!', , fourthLetter = '!', fifthLetter = '!'] = descWordPrompt;
 
+//         console.log(`
+//         Друга літера: ${secondLetter},
+//         Четверта літера: ${fourthLetter},
+//         П'ята літера: ${fifthLetter}
+//         `);
+//     }
+
+
+// }
+
+// {
+//     // Multiply table rest
+//     const resultMultiply = [...result];
+//     const flattenedResult = resultMultiply.flat();
+
+//     console.log(flattenedResult);
+
+// }
+
+
+// {
+//     // For Alert
+
+//     let forOf = ["John", "Paul", "George", "Ringo"];
+
+//     for (const name of forOf) {
+//         alert(`Hello, ${name}`)
+//     }
+
+// }
+
+// {
+//     // For Select Option
+//     const currencies = ["USD", "EUR", "GBP", "UAH"];
+//     let str = "<select>";
+//     for (const currency of currencies) {
+//         str += `<option>${currency}</option>`;
+//     }
+//     str += "</select>";
+//     document.write(str);
+
+// }
+
+// {
+//     // For Table Horizontal
+
+//     const names = ["John", "Paul", "George", "Ringo"]
+//     let str = "<table>"
+//     for (const name of names) {
+//         str += `<td>${name}</td>`
+//     }
+//     str += "</table>"
+//     document.write(str)
+// }
+
+
+// {
+//     // For Table Vertical
+//     const names = ["John", "Paul", "George", "Ringo"]
+//     let str = "<table>"
+//     for (const name of names) {
+//         str += `
+//         <tr>
+//         <td>${name}</td>
+//       </tr>`
+//     }
+//     str += "</table>"
+//     document.write(str)
+// }
+
+// {
+//     // For Table Letters
+//     const currencies = ["USD", "EUR", "GBP", "UAH"];
+//     let str = "<table>";
+
+//     for (const currency of currencies) {
+//         str += "<tr>";
+//         for (const letter of currency) {
+//             str += `<td>${letter}</td>`
+//         }
+//         str += "</tr>";
+//     }
+
+//     str += "</table>";
+//     document.write(str);
+
+// }
+
+
+
+// {
+//     // For Multiply Table
+//     let str = "<table>";
+
+//     for (const num of arrMultiply) {
+//         str += "<tr>";
+//         for (const letter of num) {
+//             str += `<td>${letter}</td>`
+//         }
+//         str += "</tr>";
+//     }
+
+//     str += "</table>";
+//     document.write(str);
+
+// }
+
+
+// {
+//     // Function capitalize
+//     const capitalize = str => {
+//         const result = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+//         return result;
+//     };
+
+//     console.log(capitalize("cANBerRa"));
+
+//     // Map Capitalize
+//     const arrPromptString = prompt('введіть щось');
+//     const wordsArray = arrPromptString.split(' ');
+//     const wordRes = wordsArray.map(word => capitalize(word));
+//     const capitalizedString = wordRes.join(' ');
+//     console.log(capitalizedString);
+// }
+
+// {
+//     //Filter Lexics
+//     let str = prompt('введіть рядок');
+//     let lexicsWords = ['блін', 'спалахуйка', 'альо'];
+//     let strSplit = str.split(' ');
+//     const strFilter = strSplit.filter((x) => !lexicsWords.includes(x));
+//     const result = strFilter.join(', ')
+//     console.log(result)
+
+//     // Beep Lexics
+//     let arrBeep = strSplit.map(x => !lexicsWords.includes(x) ? x : lexicsWords = 'beep');
+//     console.log(arrBeep)
+// }
+
+
+
+// {// Reduce HTML
+//     const currencies = ["USD", "EUR", "GBP", "UAH"];
+//     let str = "<select>";
+//     str += currencies.reduce((a, b) => a + `<option>${b}</option>`, "");
+//     str += "</select>";
+
+//     document.write(str);
+// }
+
+
+// {
+//     // For Brackets Hell Check
+
+//     For Brackets Hell Check
+//     Нехай користувач вводить рядок з будь-якими парними дужками в ньому, наприклад [[](){{{[]()}}}]. Знайдіть місце можливої помилки (непарності) у цьому рядку. Для цього, кожну дужку, що відкриває, додавайте в стек. При знаходженні дужки, що закриває, вона повинна відповідати вершині стека (останнєй доданой дужцi). Якщо вона не відповідає, виведіть повідомлення про помилку та позицію у рядку. Якщо відповідає – приберіть дужку зі стека. Якщо рядок помилок не містить, порадуйте користувача.
+//     const line = prompt()
+//     const bracketsStack = []
+//     let   i             = 0
+//     for (const character of line){
+//         //не звертайте уваги на символи, крім трьох видів дужок
+//         if (ПРОБЛЕМА) {
+//              break; //оператор break перериває цикл передчасно
+//         }
+//         i++ //iндекс поточної лiтери
+//     }
+// }
