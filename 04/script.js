@@ -333,19 +333,44 @@ const arrMultiply = [
 // }
 
 
-// {
-//     // For Brackets Hell Check
+{
+    // For Brackets Hell Check
 
-//     For Brackets Hell Check
-//     Нехай користувач вводить рядок з будь-якими парними дужками в ньому, наприклад [[](){{{[]()}}}]. Знайдіть місце можливої помилки (непарності) у цьому рядку. Для цього, кожну дужку, що відкриває, додавайте в стек. При знаходженні дужки, що закриває, вона повинна відповідати вершині стека (останнєй доданой дужцi). Якщо вона не відповідає, виведіть повідомлення про помилку та позицію у рядку. Якщо відповідає – приберіть дужку зі стека. Якщо рядок помилок не містить, порадуйте користувача.
-//     const line = prompt()
-//     const bracketsStack = []
-//     let   i             = 0
-//     for (const character of line){
-//         //не звертайте уваги на символи, крім трьох видів дужок
-//         if (ПРОБЛЕМА) {
-//              break; //оператор break перериває цикл передчасно
-//         }
-//         i++ //iндекс поточної лiтери
-//     }
-// }
+    const line = prompt()
+    const bracketsStack = []
+    let i = 0
+
+    for (const character of line) {
+
+        if (character === '(' || character === '[' || character === '{') {
+            bracketsStack.push(character);
+        }
+        else if (character === ')' || character === ']' || character === '}') {
+            if (bracketsStack.length === 0) {
+                console.log(`Помилка: Немає відповідної відкриваючої дужки для ${character} на позиції ${i}`);
+                break;
+            }
+
+            const lastBracket = bracketsStack.pop();
+
+            if (
+                (character === ')' && lastBracket.character !== '(') ||
+                (character === ']' && lastBracket.character !== '[') ||
+                (character === '}' && lastBracket.character !== '{')
+            ) {
+                console.log(`Помилка: Не відповідає останній відкриваючій дужці ${lastBracket.character}`);
+                break;
+            }
+        }
+
+        i++;
+    }
+
+    if (bracketsStack.length > 0) {
+        const lastBracket = bracketsStack.pop();
+        console.log(`Помилка: Не знайдено відповідної закриваючої дужки для ${lastBracket.character} на позиції ${lastBracket}`);
+    } else {
+        console.log("Всі дужки у рядку розташовані правильно!");
+    }
+
+}
