@@ -1,0 +1,56 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1200px;
+  gap: 50px;
+  margin-inline: auto;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 400px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(22, 198, 104, 0.649);
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  margin-inline: auto;
+}
+
+input {
+  text-align: center;
+  outline: 0;
+}
+
+.slot {
+  display: flex;
+  gap: 26px;
+}
+
+.slot_flats {
+  display: grid;
+  gap: 15px;
+}
+
+.label-slot {
+  display: flex;
+  justify-content: space-between;
+  input {
+    margin-left: 5px;
+  }
+}
+
+#newLine{
+  max-height: 200px;
+  min-height: 100px;
+  max-width: 250px;
+  min-width: 250px;
+  text-align: center;
+}
