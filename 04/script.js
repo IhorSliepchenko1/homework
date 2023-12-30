@@ -332,3 +332,38 @@
 //     document.write(str);
 // }
 
+{
+
+    // For Brackets Hell Check
+    const line = prompt();
+    const bracketsStack = [];
+    let i = 0;
+
+    for (const character of line) {
+        if (character === '(' || character === '[' || character === '{') {
+            bracketsStack.push({ character, position: i })
+        }
+
+
+        else if (character === ')' || character === ']' || character === '}') {
+            const lastOpenBracket = bracketsStack.pop();
+
+            if (!lastOpenBracket ||
+                (character === ')' && lastOpenBracket.character !== '(') ||
+                (character === ']' && lastOpenBracket.character !== '[') ||
+                (character === '}' && lastOpenBracket.character !== '{')
+            ) {
+                console.log(`Помилка: Невідповідні дужки на позиції ${i}`);
+                break;
+            }
+        }
+        i++;
+    }
+
+    if (bracketsStack.length === 0) {
+        console.log("Всі дужки парні");
+    }
+    else {
+        console.log(`Помилка: Невідповідні дужки на позиції ${bracketsStack[0].position}`);
+    }
+}
