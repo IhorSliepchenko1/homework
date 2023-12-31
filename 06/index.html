@@ -84,13 +84,12 @@
           <label for="fatherName">fatherName:</label>
           <input type="text" id="fatherName" name="fatherName" />
         </div>
+        <button onclick="enterCredentials()">Виклик Prompt()</button>
 
         <div class="label-slot">
           <label for="fullName">fullName:</label>
           <input type="text" id="fullName" name="fullName" />
         </div>
-
-        <button onclick="enterCredentials()">Виклик Prompt()</button>
       </div>
 
       <div class="container">
@@ -101,7 +100,79 @@
           <button onclick="formatMultilineString()">Виклик Prompt()</button>
         </div>
       </div>
-    </div>
+
+      <div class="container">
+        <div class="label-slot">
+          <label for="age">age:</label>
+          <input type="text" id="age" name="age" />
+        </div>
+        <div class="btn">
+          <button onclick="askAge()">Виклик Prompt()</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div>
+          <label for="login">Login:</label>
+          <input type="text" id="login" name="login" maxlength="10" />
+        </div>
+
+        <div>
+          <label for="pass">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            maxlength="10"
+            required
+          />
+        </div>
+
+        <input type="submit" value="Sign in" onclick="logIn()" />
+      </div>
+
+      <div class="container">
+        <div id="table"></div>
+        <div class="btn">
+          <button onclick="createTable()">Виклик Prompt()</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div>
+          <label for="words">Слова (через пробіл)</label>
+          <input type="text" id="words" name="words" />
+        </div>
+        <div class="btn">
+          <button onclick="filterLexics()">Перевірити</button>
+        </div>
+        <div>
+          <label for="words-new">Відфільтровані слова</label>
+          <input type="text" id="words_new" name="words-new" />
+        </div>
+      </div>
+
+      <div class="container">
+        <form id="form"></form>
+        <button onclick="displayInfoCar()">Info_Car</button>
+      </div>
+
+      <div class="container">
+        <div id="persContainer">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-table" onclick="sortByName()">Name</th>
+                <th class="col-table" onclick="sortByAge()">Age</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      
     <script src="script.js"></script>
   </body>
 </html>
+
+

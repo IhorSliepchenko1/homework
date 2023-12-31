@@ -1,9 +1,10 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 1200px;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
   margin-inline: auto;
+  justify-content: center;
+  max-width: 1400px;
 }
 
 .container {
@@ -47,10 +48,39 @@ input {
   }
 }
 
-#newLine{
+#newLine {
   max-height: 200px;
   min-height: 100px;
   max-width: 250px;
   min-width: 250px;
   text-align: center;
+}
+
+label {
+  display: block;
+}
+
+input[type="submit"],
+label {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 20px auto;
+}
+
+td {
+  border: 1px solid #0e0d0d;
+  padding: 5px;
+  text-align: center;
+}
+
+.col-table {
+  background-color: rgb(75, 75, 75);
+  color: white;
+  cursor: pointer;
+  border: 1px solid #0e0d0d;
+
 }
