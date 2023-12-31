@@ -361,40 +361,34 @@
         },
     ]
 
-    let outputDiv = document.getElementById('output');
+    const usersContainer = document.getElementById("usersContainer");
+    const tableUsers = usersContainer.querySelector("tbody");
+    tableUsers.innerHTML = "";
+    for (const user of persons) {
+        const trUsers = document.createElement("tr");
+        const tdNameUsers = document.createElement("td");
+        const tdFatherName = document.createElement("td");
+        const tdSurname = document.createElement("td");
+        const tdAgeUsersSex = document.createElement("td");
+        const tdAgeUsersAge = document.createElement("td");
+        const tdAgeUsersMarried = document.createElement("td");
 
-    let table = document.createElement('table');
+        tdNameUsers.textContent = user.name;
+        tdFatherName.textContent = user.fatherName;
+        tdSurname.textContent = user.surname;
+        tdAgeUsersSex.textContent = user.sex;
+        tdAgeUsersAge.textContent = user.age;
+        tdAgeUsersMarried.textContent = user.married;
 
-    let headerRow = document.createElement('tr');
+        trUsers.appendChild(tdNameUsers);
+        trUsers.appendChild(tdFatherName);
+        trUsers.appendChild(tdSurname);
+        trUsers.appendChild(tdAgeUsersSex);
+        trUsers.appendChild(tdAgeUsersAge);
+        trUsers.appendChild(tdAgeUsersMarried);
 
-    Object.keys(persons[0]).forEach(function (key) {
-
-        let th = document.createElement('th');
-        th.textContent = key;
-
-        headerRow.appendChild(th);
-
-    });
-
-    table.appendChild(headerRow);
-
-    persons.forEach(function (person) {
-
-        let row = document.createElement('tr');
-
-        Object.values(person).forEach(function (value) {
-
-            let td = document.createElement('td');
-
-            td.textContent = value;
-
-            row.appendChild(td);
-        });
-
-        table.appendChild(row);
-    });
-
-    outputDiv.appendChild(table);
+        tableUsers.appendChild(trUsers);
+    }
 
 
 }

@@ -221,7 +221,7 @@ function displayInfoCar() {
     }
 }
 
-
+// Array of objects sort
 const persons = [
     { name: "Іван", age: 17 },
     { name: "Марія", age: 35 },
@@ -271,3 +271,85 @@ function sortByAge() {
 }
 
 renderTable();
+
+
+
+
+// Table
+const users = [
+    {
+        name: 'Марія',
+        fatherName: 'Іванівна',
+        surname: 'Іванова',
+        sex: 'female'
+    },
+    {
+        name: 'Миколай',
+        fatherName: 'Іванович',
+        surname: 'Іванов',
+        age: 15
+    },
+    {
+        name: 'Петро',
+        fatherName: 'Іванович',
+        surname: 'Іванов',
+        married: true
+    },
+]
+
+const usersContainer = document.getElementById("usersContainer");
+const tableUsers = usersContainer.querySelector("tbody");
+
+function renderTableUsers() {
+    tableUsers.innerHTML = "";
+    for (const user of users) {
+        const trUsers = document.createElement("tr");
+        const tdNameUsers = document.createElement("td");
+        const tdFatherName = document.createElement("td");
+        const tdSurname = document.createElement("td");
+        const tdAgeUsersSex = document.createElement("td");
+        const tdAgeUsersAge = document.createElement("td");
+        const tdAgeUsersMarried = document.createElement("td");
+
+        tdNameUsers.textContent = user.name;
+        tdFatherName.textContent = user.fatherName;
+        tdSurname.textContent = user.surname;
+        tdAgeUsersSex.textContent = user.sex;
+        tdAgeUsersAge.textContent = user.age;
+        tdAgeUsersMarried.textContent = user.married;
+
+        trUsers.appendChild(tdNameUsers);
+        trUsers.appendChild(tdFatherName);
+        trUsers.appendChild(tdSurname);
+        trUsers.appendChild(tdAgeUsersSex);
+        trUsers.appendChild(tdAgeUsersAge);
+        trUsers.appendChild(tdAgeUsersMarried);
+
+        tableUsers.appendChild(trUsers);
+    }
+}
+
+renderTableUsers()
+
+function sortByTextUsers() {
+    if (sortBool) {
+        users.sort((a, b) => a.name.localeCompare(b.name))
+    } else {
+        users.sort((a, b) => b.name.localeCompare(a.name))
+    }
+    sortBool = !sortBool
+    renderTableUsers()
+}
+
+function sortByAgeUsers() {
+    if (sortBool) {
+        users.sort((a, b) => (a.age || 0) - (b.age || 0));
+    } else {
+        users.sort((a, b) => (b.age || 0) - (a.age || 0));
+    }
+    sortBool = !sortBool;
+    renderTableUsers();
+}
+
+
+console.log(sortByAgeUsers())
