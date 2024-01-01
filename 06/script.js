@@ -140,7 +140,6 @@ function createTable() {
         ];
     const table = document.getElementById('table')
     let str = "<table>";
-    let conf = confirm('введіть без пробілив');
 
     for (const num of arrMultiply) {
         str += "<tr>";
