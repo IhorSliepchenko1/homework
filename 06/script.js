@@ -127,11 +127,8 @@ function logIn() {
 // For Table
 
 
-function createTable() {
 
-    const table = document.getElementById('table')
-    let str = "<table>";
-    let conf = confirm('введіть без пробілив');
+function createTable() {
     const arrMultiply =
 
         [
@@ -141,6 +138,9 @@ function createTable() {
             prompt('рядок 4'),
             prompt('рядок 5'),
         ];
+    const table = document.getElementById('table')
+    let str = "<table>";
+    let conf = confirm('введіть без пробілив');
 
     for (const num of arrMultiply) {
         str += "<tr>";
@@ -173,7 +173,50 @@ function filterLexics() {
 }
 
 
-// Currency Table
+//Currency Table
+
+
+const table1 = () => {
+    return fetch("https://open.er-api.com/v6/latest/USD")
+        .then((res) => res.json())
+        .then((data) => {
+            const { rates: exchangeRate } = data;
+            const keys = Object.keys(exchangeRate);
+            const exchangeArray = [];
+            for (const currency1 of Object.keys(exchangeRate)) {
+                const currency = [currency1];
+                for (const currency2 of Object.keys(exchangeRate)) {
+                    const rate = exchangeRate[currency2] / exchangeRate[currency1];
+                    currency.push(rate.toFixed(2));
+                }
+                exchangeArray.push(currency);
+            }
+            return table2(exchangeArray, keys);
+        });
+};
+
+const table2 = (arr, keys) => {
+    const curTable = document.getElementById('curTable');
+    let str = "<table>";
+    str += "<tr>";
+    str += "<th></th>";
+    for (let key of keys) {
+        str += "<th>" + key + "</th>";
+    }
+
+    str += "</tr>";
+    for (let row of arr) {
+        str += "<tr>";
+        for (let number of row) {
+            str += "<td>" + number + "</td>";
+        }
+        str += "</tr>";
+    }
+    str += "</table>";
+    curTable.innerHTML = str;
+};
+
+
 
 
 // Form
@@ -352,4 +395,44 @@ function sortByAgeUsers() {
 }
 
 
-console.log(sortByAgeUsers())
+// Divide
+function returnMathFloor() {
+    let num1 = parseFloat(document.getElementById("num1").value)
+    let num2 = parseFloat(document.getElementById("num2").value)
+    let divideElement = document.getElementById("divide");
+    const result = Math.floor(num1 / num2);
+    divideElement.value = result;
+}
+
+// Calc Func
+function calcFunc() {
+
+    const objPay = {
+        first: (document.getElementById('1').value),
+        second: (document.getElementById('2').value),
+        third: (document.getElementById('3').value),
+        fourth: (document.getElementById('4').value)
+    }
+
+    const payments = document.getElementById('payments');
+    const average = document.getElementById('average');
+
+    payments.value = Object.values(objPay).reduce((acc, value) => acc + parseFloat(value) || 0, 0)
+
+    average.value = (payments.value) / Object.keys(objPay).length
+
+
+}
+
+
+
+
+// Calc Live
+
+const calcTaxes = () => {
+    const paymentsForTax = document.getElementById('paymentsForTax');
+    paymentsForTax.value = payments.value
+    const taxes = document.getElementById('taxes')
+    taxes.value = (paymentsForTax.value / 19.5).toFixed(2)
+    return calcFunc()
+}

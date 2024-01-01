@@ -9,6 +9,7 @@
   <body>
     <div class="wrapper" id="wrapper">
       <div class="container">
+        <h3>1 Temperature</h3>
         <div class="slot cels">
           <label for="celsius">Температура в ℃:</label>
           <input type="number" id="celsius" name="celsius" />
@@ -23,6 +24,8 @@
       </div>
 
       <div class="container">
+        <h3>2 RGB</h3>
+
         <div class="slot rgb">
           <label for="rgb">RGB color:</label>
           <input type="text" id="rgb" name="rgb" />
@@ -37,6 +40,8 @@
       </div>
 
       <div class="container flats-cont">
+        <h3>3 Flats</h3>
+
         <div class="slot_flats">
           <div class="label-slot">
             <label for="floor">кiлькiсть поверхiв:</label>
@@ -70,6 +75,8 @@
       </div>
 
       <div class="container credentials-cont">
+        <h3>4 Credentials</h3>
+
         <div class="label-slot">
           <label for="name">name:</label>
           <input type="text" id="name" name="name" />
@@ -93,6 +100,8 @@
       </div>
 
       <div class="container">
+        <h3>5 New line</h3>
+
         <div class="slot">
           <textarea id="newLine"></textarea>
         </div>
@@ -102,6 +111,8 @@
       </div>
 
       <div class="container">
+        <h3>6 Prompt OR</h3>
+
         <div class="label-slot">
           <label for="age">age:</label>
           <input type="text" id="age" name="age" />
@@ -112,6 +123,8 @@
       </div>
 
       <div class="container">
+        <h3>7 Login And Password</h3>
+
         <div>
           <label for="login">Login:</label>
           <input type="text" id="login" name="login" maxlength="10" />
@@ -132,6 +145,8 @@
       </div>
 
       <div class="container">
+        <h3>8 For Table</h3>
+
         <div id="table"></div>
         <div class="btn">
           <button onclick="createTable()">Виклик Prompt()</button>
@@ -139,6 +154,8 @@
       </div>
 
       <div class="container">
+        <h3>9 Filter Lexics</h3>
+
         <div>
           <label for="words">Слова (через пробіл)</label>
           <input type="text" id="words" name="words" />
@@ -153,11 +170,15 @@
       </div>
 
       <div class="container">
+        <h3>11 Form</h3>
+
         <form id="form"></form>
         <button onclick="displayInfoCar()">Info_Car</button>
       </div>
 
       <div class="container">
+        <h3>12 Array of objects sort</h3>
+
         <div id="persContainer">
           <table>
             <thead>
@@ -172,6 +193,8 @@
       </div>
 
       <div class="container">
+        <h3>13 Table</h3>
+
         <div id="usersContainer">
           <table>
             <thead>
@@ -190,6 +213,74 @@
           </table>
         </div>
       </div>
+      <div class="container">
+        <h3>14 Divide</h3>
+
+        <input type="number" id="num1" />
+        <input type="number" id="num2" />
+        <button onclick="returnMathFloor()">divide</button>
+        <input type="number" id="divide" />
+      </div>
+
+      <div class="container">
+        <h3>15 Calc Func</h3>
+
+        <div>
+          <label for="first-m">з/п за 1й місяць</label>
+          <input type="number" id="1" name="first-m" />
+        </div>
+        <div>
+          <label for="second-m">з/п за 2й місяць</label>
+          <input type="number" id="2" name="second-m" />
+        </div>
+        <div>
+          <label for="third-m">з/п за 3й місяць</label>
+          <input type="number" id="3" name="third-m" />
+        </div>
+        <div>
+          <label for="fourth-m">з/п за 4й місяць</label>
+          <input type="number" id="4" name="fourth-m" />
+        </div>
+
+        <div class="slotCalc">
+          <div>
+            <label for="payments">Квартальні виплати:</label>
+            <input type="number" id="payments" name="payments" />
+          </div>
+
+          <div>
+            <label for="average">Середня з/п:</label>
+            <input type="number" id="average" name="average" />
+          </div>
+        </div>
+
+        <button onclick="calcFunc()">Розрахувати</button>
+      </div>
+
+      <div class="container">
+        <h3>16 Calc Live</h3>
+
+        <h3>Спочатку виконайте попереднє завдання</h3>
+        <div>
+          <label for="payments">Квартальні виплати:</label>
+          <input type="number" id="paymentsForTax" name="payments" />
+        </div>
+        <div class="slotCalc">
+          <div>
+            <label for="taxes">Сумма податку:</label>
+            <input type="number" id="taxes" name="taxes" />
+          </div>
+        </div>
+
+        <button onclick="calcTaxes()">Розрахувати</button>
+      </div>
+    </div>
+
+    <div class="container currContainer">
+      <h3>10 Currency Table</h3>
+
+      <button onclick="table1()">Cur-table</button>
+      <table id="curTable"></table>
     </div>
     <script src="script.js"></script>
   </body>

@@ -4,13 +4,14 @@
   gap: 50px;
   margin-inline: auto;
   justify-content: center;
-  max-width: 1400px;
+  max-width: 1700px;
 }
 
 .container {
   display: grid;
   justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 15px;
   width: 400px;
   border: 1px solid;
@@ -87,4 +88,23 @@ td {
 .tr {
   display: flex;
   gap: 2px;
+}
+
+.currContainer {
+  margin-top: 30px;
+  width: auto;
+
+  table {
+    overflow: hidden;
+  }
+}
+
+#divisionResult {
+  text-align: center;
+}
+
+.slotCalc {
+  border: 1px solid;
+  padding: 5px 35px;
+  display: grid;
 }
